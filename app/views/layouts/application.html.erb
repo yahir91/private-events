@@ -11,6 +11,7 @@
 
   <body>
     <%= "Hello #{current_user.name}"%>
+    <p>Hello, <%= User.find(session[:user_id]).name%></p>
     <%= yield %>
   </body>
 </html>
