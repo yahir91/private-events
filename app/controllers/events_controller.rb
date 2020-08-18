@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    @user = User.find(session[:user_id]) # for showing current user on page
+    #@user = User.find(session[:user_id]) # for showing current user on page
     @future_events = Event.where('date > ?', Date.today)
     @past_events = Event.where('date < ?', Date.today)
   end

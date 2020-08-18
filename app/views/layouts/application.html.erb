@@ -10,8 +10,16 @@
   </head>
 
   <body>
-    <%= "Hello #{current_user.name}"%>
-    <p>Hello, <%= User.find(session[:user_id]).name%></p>
+    <% if(session[:user_id]) %>
+      <%= link_to 'New Event', new_event_path %>
+      <%= link_to 'Log out', logout_path %>
+    <% else %>
+      <%= link_to 'Sign up', signup_path %>
+      <%= link_to 'Log in', login_path %>
+    <% end %>
+    <p><%= "Hello #{current_user.name}"%></p>
+    
     <%= yield %>
+
   </body>
 </html>

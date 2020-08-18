@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @my_events = User.find(params[:id]).events_created
-    @attended_events = User.find(params[:id]).attended_event
-    @future_events = @event.where('date > ?', Date.today)
-    @past_events = @event.where('date < ?', Date.today)
+    #@attended_events = User.find(params[:id]).event_attended_id
+    @future_events = @my_events.where('date > ?', Date.today)
+    @past_events = @my_events.where('date < ?', Date.today)
 
   end
 
