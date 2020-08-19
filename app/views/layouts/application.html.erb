@@ -17,8 +17,9 @@
       <%= link_to 'Sign up', signup_path %>
       <%= link_to 'Log in', login_path %>
     <% end %>
-    <p><%= "Hello #{current_user.name}"%></p>
-    
+    <% if(session[:user_id]) %>
+    <%# <p><%= "Hello #{current_user.name}"%></p> %>
+    <% end %>
     <%= yield %>
 
   </body>
