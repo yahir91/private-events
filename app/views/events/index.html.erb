@@ -7,6 +7,7 @@
     <tr>
       <th>Description</th>
       <th>Location</th>
+      <th>Creator</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +17,9 @@
       <tr>
         <td><%= event.description %></td>
         <td><%= event.location %></td>
+        <td><%= event.creator.name %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Attend', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,3 +29,4 @@
 <br>
 
 
+ 

@@ -14,7 +14,6 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
- 
   end
 
   # GET /events/new
@@ -24,7 +23,29 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @event = Event.find(params[:id])
+    @add_attend = Attendance.new
+    @add_attend.event_attended_id = @event.id
+    @add_attend.attendee_id = session[:user_id]
+    if @add_attend.save
+      redirect_to events_path
+    else
+      redirect_to root_url
+    end
   end
+
+  def attend
+    @event = Event.find(params[:id])
+    @add_attend = Attendance.new
+    @add_attend.event_attended_id = @event.id
+    @add_attend.attendee_id = session[:user_id]
+    if @add_attend.save
+      redirect_to events_path
+    else
+      redirect_to root_url
+    end
+  end
+
 
   # POST /events
   def create
@@ -67,4 +88,4 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:description, :location, :date, :creator_id)
     end
-end
+ end
