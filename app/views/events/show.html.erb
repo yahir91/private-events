@@ -10,5 +10,12 @@
   <%= @event.location %>
 </p>
 
+<h4>Atendees</h4>
+<% @attend.each do |t| %>
+    <div>
+        <%= "- " + t.name %>
+    </div>
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

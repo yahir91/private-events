@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @attend = @event.attendees
   end
 
   # GET /events/new
@@ -23,18 +24,6 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = Event.find(params[:id])
-    @add_attend = Attendance.new
-    @add_attend.event_attended_id = @event.id
-    @add_attend.attendee_id = session[:user_id]
-    if @add_attend.save
-      redirect_to events_path
-    else
-      redirect_to root_url
-    end
-  end
-
-  def attend
     @event = Event.find(params[:id])
     @add_attend = Attendance.new
     @add_attend.event_attended_id = @event.id
@@ -68,13 +57,6 @@ class EventsController < ApplicationController
       else
         format.html { render :edit }
       end
-    end
-  end
-
-  def destroy
-    @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
     end
   end
 

@@ -10,21 +10,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @my_events = User.find(params[:id]).events_created
-    #@attended_events = User.find(params[:id]).event_attended_id
-    @future_events = @my_events.where('date > ?', Date.today)
-    @past_events = @my_events.where('date < ?', Date.today)
-
+    # @my_events = User.find(params[:id]).events_created
+    @user = User.find(params[:id])
+    @attending = @user.events_attending
+    # @attended_events = User.find(params[:id]).events_attending
+    # @future_events = @my_events.where('date > ?', Date.today)
+    # @past_events = @my_events.where('date < ?', Date.today)
   end
 
-  # GET /users/new
-  def new
-    @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
-  end
 
   def create
     @user = User.new(user_params)
