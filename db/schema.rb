@@ -10,31 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_202000) do
-
-  create_table "attendances", force: :cascade do |t|
-    t.integer "attendee_id"
-    t.integer "event_attended_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
-    t.index ["event_attended_id"], name: "index_attendances_on_event_attended_id"
+ActiveRecord::Schema.define(version: 20_200_820_202_000) do
+  create_table 'attendances', force: :cascade do |t|
+    t.integer 'attendee_id'
+    t.integer 'event_attended_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['attendee_id'], name: 'index_attendances_on_attendee_id'
+    t.index ['event_attended_id'], name: 'index_attendances_on_event_attended_id'
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "description"
-    t.string "location"
-    t.integer "creator_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "event_date"
-    t.index ["creator_id"], name: "index_events_on_creator_id"
+  create_table 'events', force: :cascade do |t|
+    t.string 'description'
+    t.string 'location'
+    t.datetime 'date'
+    t.integer 'creator_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.date 'event_date'
+    t.index ['creator_id'], name: 'index_events_on_creator_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end
