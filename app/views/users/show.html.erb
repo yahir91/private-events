@@ -6,7 +6,14 @@
 </p>
 
 <h4>Events Attending</h4>
-<% @attending.each do |t| %>
+<% @upcomming_events.each do |t| %>
+    <div>
+        <%= "- " + t.description %>
+    </div>
+<% end %>
+
+<h4>Events already attended</h4>
+<% @prev_events.each do |t| %>
     <div>
         <%= "- " + t.description %>
     </div>

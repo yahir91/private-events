@@ -13,11 +13,17 @@ class UsersController < ApplicationController
     # @my_events = User.find(params[:id]).events_created
     @user = User.find(params[:id])
     @attending = @user.events_attending
+    @upcomming_events = @attending.upcomming_events
+    @prev_events = @attending.prev_events
     # @attended_events = User.find(params[:id]).events_attending
     # @future_events = @my_events.where('date > ?', Date.today)
     # @past_events = @my_events.where('date < ?', Date.today)
   end
 
+  # GET /users/new
+  def new
+    @user = User.new
+  end
 
   def create
     @user = User.new(user_params)
