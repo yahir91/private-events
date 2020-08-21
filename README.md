@@ -17,6 +17,26 @@
 - Git Flow
 - SQL Lite 3
 
+## Getting Started
+
+- Clone the Repo from Gith (https://github.com/)
+
+- Go to private-events folder and type in the command line following next order:
+
+`git clone https://github.com/yahir91/private-events`
+`bundle`
+`rails db: reset`
+`rails db: migrate`
+
+- Open in your browser "localhost:3000" to test the models
+
+## Instructions
+
+- Ruby 2.6
+- Ruby in Rails 5
+- Git Flow
+- SQL Lite 3
+
 ## Author
 
 👤 **Yahir Cardona**
