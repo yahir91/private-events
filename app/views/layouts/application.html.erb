@@ -18,7 +18,7 @@
       <%= link_to 'Log in', login_path %>
     <% end %>
     <% if(session[:user_id]) %>
-    <%# <p><%= "Hello #{current_user.name}"%></p> %>
+    <p><%= "Hello #{current_user.name}"%></p>
     <% end %>
     <%= yield %>
 
