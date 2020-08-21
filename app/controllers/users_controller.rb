@@ -1,26 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
-  # GET /users
-  # GET /users.json
   def index
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
-    # @my_events = User.find(params[:id]).events_created
     @user = User.find(params[:id])
     @attending = @user.events_attending
     @upcomming_events = @attending.upcomming_events
     @prev_events = @attending.prev_events
-    # @attended_events = User.find(params[:id]).events_attending
-    # @future_events = @my_events.where('date > ?', Date.today)
-    # @past_events = @my_events.where('date < ?', Date.today)
   end
-
-  # GET /users/new
+ 
   def new
     @user = User.new
   end
@@ -56,12 +47,10 @@ class UsersController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:name)
   end
