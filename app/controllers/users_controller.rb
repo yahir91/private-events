@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @upcomming_events = @attending.upcomming_events
     @prev_events = @attending.prev_events
   end
- 
+
   def new
     @user = User.new
   end

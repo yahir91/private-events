@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
-
   def index
     @upcomming_events = Event.upcomming_events
     @prev_events = Event.prev_events
@@ -11,7 +10,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attend = @event.attendees
   end
-
 
   def new
     @event = Event.new
