@@ -13,13 +13,15 @@
     <% if(session[:user_id]) %>
       <%= link_to 'New Event', new_event_path %>
       <%= link_to 'Log out', logout_path %>
+    <% elsif current_user %>
+      <%= link_to 'Sign up', signup_path%>
     <% else %>
-      <%= link_to 'Sign up', signup_path %>
       <%= link_to 'Log in', login_path %>
     <% end %>
     <% if(session[:user_id]) %>
     <p><%= "Hello #{current_user.name}"%></p>
     <% end %>
+    <hr>
     <%= yield %>
 
   </body>
