@@ -27,7 +27,6 @@ class UsersController < ApplicationController
         format.html { render :new }
       end
     end
-    
   end
 
   def update
