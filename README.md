@@ -25,7 +25,7 @@
 
 `git clone https://github.com/yahir91/private-events`
 `bundle`
-`rails db: reset`
+`rails db: reset` "important"
 `rails db: migrate`
 
 - Open in your browser "localhost:3000" to test the models
