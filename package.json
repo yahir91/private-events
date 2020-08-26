@@ -3,7 +3,10 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "stylelint": "^13.6.1",
-    "stylelint-config-recommended": "^3.0.0"
+    "stylelint": "^13.3.3",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-scss": "^3.17.2"
   }
 }
