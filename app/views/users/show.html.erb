@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<p class="username">
+  User name:
   <%= @user.name %>
 </p>
-
-<h4>Events Attending</h4>
+<h1> Current User </h1>
+<h3>Events Attending</h3>
 <% @upcomming_events.each do |t| %>
     <div>
         <%= "- " + t.description %>
     </div>
 <% end %>
-
-<h4>Events already attended</h4>
+<br/>
+<hr>
+<h3>Events already attended</h3>
 <% @prev_events.each do |t| %>
     <div>
         <%= "- " + t.description %>

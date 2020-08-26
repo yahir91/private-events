@@ -11,10 +11,14 @@
 
   <body>
     <header>
-      <%= logged_in %> | <%= signup %>
+      <img src="our_logo.jpg" alt="logo" width="200" height="50">
+      <%= logged_in %> <span>|</span> <%= signup %>
     </header>
     <hr>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    
 
   </body>
 </html>

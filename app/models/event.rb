@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   validates :description, presence: true, uniqueness: true, length: { minimum: 5}
   validates :location, presence: true, length: { minimum: 3, maximum: 20}
-  validates :date, presence: true
+  #validates :date, presence: true
 
   has_many :attendances, foreign_key: :event_attended_id
   has_many :attendees, through: :attendances, source: :attendee

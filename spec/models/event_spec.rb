@@ -14,6 +14,6 @@ it { should validate_length_of(:location).is_at_most(20) }
 
 # Validate date
 
-it { should validate_presence_of(:date) }
+#it { should validate_presence_of(:date) }
 
 end

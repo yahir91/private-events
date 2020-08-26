@@ -9,8 +9,9 @@
   <strong>Location:</strong>
   <%= @event.location %>
 </p>
-
-<h4>Atendees</h4>
+<br/>
+<hr>
+<h3>Atendees</h3>
 <% @attend.each do |t| %>
     <div>
         <%= "- " + t.name %>
