@@ -26,6 +26,15 @@ header {
   background-color: rgb(36, 35, 34);
   padding: 10px;
 }
+
+span.logo {
+  color: darkorange !important;
+  font-size: 14px;
+  letter-spacing: 0;
+  margin: 0 20px;
+  font-weight: 900;
+}
+
 header a{
   color: white !important;
   font-size: 12px
