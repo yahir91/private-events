@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <%= logged_in %>
-    <%= signup %>
+    <header>
+      <%= logged_in %> | <%= signup %>
+    </header>
+    <hr>
     <%= yield %>
 
   </body>
