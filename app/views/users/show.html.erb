@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p class="username">
+  User name:
+  <%= @user.name %>
+</p>
+<h1> Current User </h1>
+<h3>Events Attending</h3>
+<% @upcomming_events.each do |t| %>
+    <div>
+        <%= "- " + t.description %>
+    </div>
+<% end %>
+<br/>
+<hr>
+<h3>Events already attended</h3>
+<% @prev_events.each do |t| %>
+    <div>
+        <%= "- " + t.description %>
+    </div>
+<% end %>
+<br/>
+<hr>
+<%= link_to 'Back', users_path %>

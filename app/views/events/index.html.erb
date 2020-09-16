@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+<h3>User events</h3>
+<%= link_to 'Events attending', users_path %>
+<br/><br/>
+<hr>
+<h3>Upcoming Events</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Creator</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @upcomming_events.each do |event| %>
+      <tr>
+        <td><%= event.description %></td>
+        <td><%= event.location %></td>
+        <td><%= event.event_date %></td>
+        <td><%= event.creator.name %></td>
+        <td><%= link_to 'Show', event %></td>
+         <td><% if !event.attendees.find_by(id: current_user) && !current_user.nil? %>
+        <%= link_to 'Attend', edit_event_path(event) %>
+         <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<hr>
+<h3>Previews Events</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Creator</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prev_events.each do |event| %>
+      <tr>
+        <td><%= event.description %></td>
+        <td><%= event.location %></td>
+        <td><%= event.event_date %></td>
+        <td><%= event.creator.name %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+<hr>
+
+
+ 

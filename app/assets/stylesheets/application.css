@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: rgb(243, 247, 253);
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: rgb(36, 35, 34);
+  padding: 10px;
+}
+
+span.logo {
+  color: darkorange !important;
+  font-size: 14px;
+  letter-spacing: 0;
+  margin: 0 20px;
+  font-weight: 900;
+}
+
+header a {
+  color: white !important;
+  font-size: 12px;
+}
+
+header span {
+  color: white !important;
+  font-size: 10px;
+}
+
+main {
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+hr {
+  margin: 0;
+}
+
+h1 {
+  color: red;
+}
+
+h3 {
+  color: orange;
+}
+
+.username {
+  color: rgb(49, 12, 83);
+  float: right;
+  clear: both;
+}

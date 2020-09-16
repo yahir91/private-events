@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <span class="logo"> EVENTS </span>
+      <%= logged_in %> <span>|</span> <%= signup %>
+    </header>
+    <hr>
+    <main>
+      <%= yield %>
+    </main>
+    
+
   </body>
 </html>

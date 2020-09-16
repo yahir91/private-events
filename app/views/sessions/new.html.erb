@@ -1,0 +1,11 @@
+<p id=”alert”><%= alert %></p>
+<h1>Login</h1>
+
+<%= form_tag sessions_path do %>
+  <%= label_tag(:name, "Username") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Log in") %>
+<% end %>
+
+<br/>
+<hr>
